@@ -1,0 +1,95 @@
+[
+    {
+        "id": 1,
+        "name":"Mercedes",
+        "price": 2000000,
+        "image": "assets/car.png"
+    },
+    
+    {
+        "id": 2,
+        "name":"Redmi 12",
+        "price": 20000,
+        "image": "assets/Redmi-12.jpg"
+    },
+    {
+        "id": 3,
+        "name":"T-Shirts",
+        "price": 500,
+        "image": "assets/T-shirts.webp"
+    },
+    {
+        "id": 4,
+        "name":"Watch",
+        "price": 1500,
+        "image": "assets/watch.webp"
+    },
+    {
+        "id": 5,
+        "name":"Chair",
+        "price": 1900,
+        "image": "assets/chair.jpg"
+    },
+    {
+        "id": 6,
+        "name":"Laptop",
+        "price": 32000,
+        "image": "assets/laptop.webp"
+    },
+    {
+        "id": 7,
+        "name":"phone Cover",
+        "price": 1000,
+        "image": "assets/phone-cover.png"
+    },
+    {
+        "id": 8,
+        "name":"Head Phones",
+        "price": 3500,
+        "image": "assets/Headphones.webp"
+        
+    },
+    {
+        "id": 9,
+        "name":"Glasses",
+        "price": 1000,
+        "image": "assets/phone-cover.png"
+    },
+    {
+        "id": 10,
+        "name":"Redmi 12",
+        "price": 20000,
+        "image": "assets/Redmi-12.jpg"
+    },
+    {
+        "id": 11,
+        "name":"AirBirds Pro",
+        "price": 2500,
+        "image": "assets/Airbirds.webp"
+    },
+    {
+        "id": 12,
+        "name":"Watch",
+        "price": 1500,
+        "image": "assets/watch.webp"
+    },
+    {
+        "id": 13,
+        "name":"Chair",
+        "price": 1900,
+        "image": "assets/chair.jpg"
+    },
+    {
+        "id": 14,
+        "name":"Laptop",
+        "price": 32000,
+        "image": "assets/laptop.webp"
+    },
+    {
+        "id": 15,
+        "name":"Head Phones",
+        "price": 3500,
+        "image": "assets/Headphones.webp"
+    }
+
+]

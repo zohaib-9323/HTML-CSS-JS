@@ -1,0 +1,331 @@
+body{
+    font-family: "Fredoka", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    margin: 0;   
+}
+.container {
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    /* transition: transform .5s; */
+    margin-bottom: 30px;
+}
+svg{
+    width: 30px;
+    cursor: pointer;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0px;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    display: flex;
+    width: 22.5px;
+    height: 22.5px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    top: 50%;
+    right: -10px;
+}
+.title{
+    font-size: xx-large;
+}
+.productlist{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    filter: drop-shadow(0 5px 5px #0009);
+}
+.productlist .items img{
+    width: 85%;
+    height: 50%;
+    height: 140px;
+    padding: 15px 15px;
+    border-radius: 20px;
+    /* filter: drop-shadow(0 25px 20px #0009); */
+}
+
+.productlist .items{
+    background-color: #e3d5ca;
+    /* padding: 20px; */
+    border-radius: 20px;
+    height: 300px;
+    display: grid;
+    grid-template-rows: 170px 130px;
+    gap: 10px;
+}
+.productlist .items .infor{
+    background-color: whitesmoke;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.productlist .items h2{
+    font-weight: 400;
+    font-size: large;
+}
+.price{
+    letter-spacing: 2px;
+    font-size: small;
+}
+.productlist .items .Addcart{
+    background-color: #bc6c25;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.productlist .items .confirm{
+    background-color: #bc6c25;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.productlist .items .quantity-selector{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    
+}
+.productlist .items .quantity-selector button.plus{
+    padding-top: 2px;
+    margin-right: 2px; 
+    border: .5px solid #e3d5ca;
+    border-radius: 5px;  
+}
+.productlist .items .quantity-selector button.minus{
+    padding: 1.5px 6.19px;
+    border: .5px solid #e3d5ca;
+    border-radius: 5px; 
+}
+
+.productlist .items .quantity-selector span{
+    background-color: white;
+    padding: 3px 6px;
+}
+.productlist .items .quantity-selector .Quantity{
+    padding: 2.3px 8.5px;
+    background-color: #e3d5ca;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border: none;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: .5px solid #e3d5ca;
+    border-radius: 5px; 
+}
+.productlist .items button:hover{
+    background-color: #bd8b5f;
+    cursor: pointer;
+    border: none;
+}
+body.showcart .carttab {
+    transform: translateX(0); 
+}
+/* body.showcart .container {
+    transform: translateX(-200px);
+} */
+ body.showcart header{
+    justify-content: left;
+
+ }
+ body.showcart header .icon-cart{
+    margin-left: 50px;
+
+ }
+.carttab {
+    width: 300px;
+    background-color: #1b263b;
+    color: white;
+    position: fixed;
+    inset: 0 0 0 auto;
+    transform: translateX(100%); 
+    display: grid;
+    grid-template-rows: 70px 1fr 100px 50px;
+    gap: 5px;
+    
+    transition: transform 0.5s ease;
+    
+}
+.carttab h1{
+    
+    padding: 15px;
+    color: #003049;
+    margin: 0;
+    font-weight: 350;
+    background-color: #edede9;
+}
+.carttab .totalamount{
+    margin-right: 150px;
+    padding-left: 10px;
+    
+}
+.carttab .ST{
+    margin-right: 111px;
+    padding-left: 10px;
+}
+.carttab .GT{
+    margin-right: 176px;
+    padding-left: 10px;
+}
+
+
+.carttab .btn{
+    display: grid;
+    height: 50px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.carttab .btn button{
+    background-color: #778da9;
+    border: none;
+    font-family: "Fredoka", system-ui;
+    font-weight: 500;
+    cursor: pointer;
+}
+.carttab .btn .clear{
+    background-color: white;
+}
+.carttab .close{
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+.carttab .listcart .item img{
+    width: 90%;
+    height: 50px;
+    padding:3px 3px;
+    
+
+}
+.carttab .listcart .item{
+    display: grid;
+    grid-template-rows: 65px 35px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.carttab .listcart .item .row1{
+    display: grid;
+    width: 300px;
+    grid-template-columns: 70px 1fr 80px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid #edede9;
+}
+.carttab .listcart .item .row2{
+    display: grid;
+    width: 300px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #edede9;
+    
+}
+.carttab .listcart .item .name{
+    text-align: center;
+    padding-left: 5px;
+}
+.carttab .listcart .item .peritem{
+    text-align: left;
+    font-size: 13px;
+}
+.carttab .listcart .item .totalPrice{
+    font-size: 14px;
+    text-align: left;
+    padding-left: 24px;
+}
+.listcart .quantity span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    color: black;
+    border-radius: 30%;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+}
+.listcart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: white;
+}
+/* .listcart .item:nth-child(even){
+    background-color: #415a77 ;
+} */
+
+.listcart{
+    overflow: auto;
+    
+}
+.listcart::-webkit-scrollbar{
+    width: 0;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+@media only screen and (max-width: 992px) {
+    .productlist{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width: 768px) {
+    .productlist{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:400px)
+{
+    .productlist{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

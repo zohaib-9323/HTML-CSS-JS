@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <style>
+      .invoice {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      
+      .tabel {
+        width: 500px;
+        background-color: #778da9;
+        border-radius: 10px;
+        padding-top: 10px;
+      }
+      p{
+        margin: 0;
+      }
+      .Saletax,
+      .Totalamount,
+      .Subtotal{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      table {
+        width: 100%;
+        
+      }
+      table {
+        margin-bottom: 50px;
+      }
+      table th {
+        width: 150px;
+        padding: 0 25px;
+        font-weight: 400;
+        height: 40px;
+        color: rgb(255, 255, 255);
+        background-color: #1b263b;
+        
+      }
+      tr {
+        margin-bottom: 10px;
+        color: white;
+        
+      }
+      tr:nth-child(even) {
+        background-color: #415a77;
+      }
+      td {
+        text-align: center;
+        font-weight: 200;
+      }
+      .back{
+        background-color: #4c607b;
+        border: none;
+        border-radius: 30px;
+        width: 100px;
+        height: 40px;
+        margin-top: 10px;
+        color: white;
+      }
+      .print{
+        background-color: #4c607b;
+        border: none;
+        border-radius: 30px;
+        width: 100px;
+        height: 40px;
+        margin-top: 10px;
+        color: white;
+      }
+      .back:hover{
+        cursor: pointer;
+        background-color: #778da9;
+      }
+      @media (max-width:700px)
+{
+    .tabel{
+        width: 400px;
+    }
+}
+@media (max-width:450px)
+{
+    .tabel{
+        width: 350px;
+    }
+}
+    </style>
+  </head>
+  <body>
+    <div class="invoice">
+      <div><h2>Invoice</h2></div>
+      <div class="tabel">
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">Product</th>
+              <th style="text-align: center">Quantity</th>
+              <th style="text-align: right">Total Price</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="Subtotal"><p>SubTotal Amount</p><p class="Sub-total"></p></div>
+        <div class="Saletax"><p>Sale Tax</p><p class="tax"></p></div>
+        <div class="Totalamount"><p>Total Amount</p><p class="Total"></p></div>
+
+      </div>
+      <button class="back">Back</button>
+      <button class="print">Print</button>
+    </div>
+
+    <script src="invoice.js"></script>
+  </body>
+</html>
