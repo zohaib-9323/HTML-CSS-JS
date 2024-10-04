@@ -5,38 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice</title>
     <style>
+      body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .roboto-thin {
+        font-family: "Roboto", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+      }
+        
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:#f5ebe0;
+        width: 570px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        position: relative;
+      }
+      .header{
+        display: flex;
+        justify-content: space-between;
+        width: 570px;
+      }
       .invoice {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: relative;
+        
+        
       }
       
       .tabel {
-        width: 500px;
-        background-color: #778da9;
-        border-radius: 10px;
-        padding-top: 10px;
+        width: 570px;
+        background-color: #fbfbfb;
+        /* border-radius: 10px; */
+        /* padding-top: 10px; */
+        margin-bottom: 30px;
+        
       }
       p{
         margin: 0;
+      }
+      .calc{
+        width: 25px;
+        margin-left: 100px;
       }
       .Saletax,
       .Totalamount,
       .Subtotal{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: left;
         margin-bottom: 10px;
       }
       table {
         width: 100%;
+        margin-bottom: 25px;
         
       }
-      table {
-        margin-bottom: 50px;
-      }
+      
       table th {
         width: 150px;
         padding: 0 25px;
@@ -48,27 +82,32 @@
       }
       tr {
         margin-bottom: 10px;
-        color: white;
+        color: black;
+        
         
       }
-      tr:nth-child(even) {
+      /* tr:nth-child(even) {
         background-color: #415a77;
-      }
+      } */
       td {
         text-align: center;
         font-weight: 200;
+        border-bottom: 1px solid black;
       }
       .back{
-        background-color: #4c607b;
+        background-color: #9ba1aa;
         border: none;
-        border-radius: 30px;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        /* border-radius: 30px;
         width: 100px;
         height: 40px;
-        margin-top: 10px;
+        margin-top: 10px; */
         color: white;
       }
       .print{
-        background-color: #4c607b;
+        background-color: #373e46;
         border: none;
         border-radius: 30px;
         width: 100px;
@@ -80,43 +119,109 @@
         cursor: pointer;
         background-color: #778da9;
       }
+      .Saletax,
+      .Totalamount,
+      .Subtotal{
+        height: 40px;
+        width: 200px;
+        /* justify-content: center; */
+      }
+      /* .Sub-total,
+      .tax,
+      .Total{
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 0px;
+        background-color: #edf2f4;
+        border: 0.5px solid #95999a;
+        border-radius: 5px;
+
+      } */
       @media (max-width:700px)
 {
+  .header{
+    width: 470px;
+  }
+    .container{
+      width: 470px;
+    }
     .tabel{
-        width: 400px;
+        width: 450px;
     }
 }
-@media (max-width:450px)
+@media (max-width:500px)
 {
-    .tabel{
-        width: 350px;
+  .header{
+    width: 360px;
+    padding-top: 10px;
+  }
+  .container{
+      width: 370px;
+      padding: 0;
     }
+    .tabel{
+        width: 370px;
+    }
+    table th {
+        width: 140px;
+        padding: 0 20px;
+        font-weight: 300;
+        height: 40px;
+        
+        
+      }
 }
     </style>
   </head>
   <body>
+    <div class="container">
+    <div class="header">
+      <div style="margin-bottom: 30px;">
+        <h2>Invoice</h2>
+      </div>
+    
+      <div style="margin-bottom: 30px;">
+        <span style="display: block; margin-top: 28px;">Date:  <span class="date"></span></span>
+      </div>
+    </div>
     <div class="invoice">
-      <div><h2>Invoice</h2></div>
-      <div class="tabel">
+       <div class="tabel">
         <table>
           <thead>
             <tr>
               <th style="text-align: left">Product</th>
+              <th style="text-align: centers">Rate</th>
               <th style="text-align: center">Quantity</th>
-              <th style="text-align: right">Total Price</th>
+              <th style="text-align: center">Total Price</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
-        <div class="Subtotal"><p>SubTotal Amount</p><p class="Sub-total"></p></div>
-        <div class="Saletax"><p>Sale Tax</p><p class="tax"></p></div>
-        <div class="Totalamount"><p>Total Amount</p><p class="Total"></p></div>
+        
 
-      </div>
-      <button class="back">Back</button>
-      <button class="print">Print</button>
+        </div >
+       <table>
+        <tr>
+          <th><span>Sub-Total</span></th>
+          <td><span class="Sub-total"></span></td>
+        </tr>
+        <tr>
+          <th><span>Sale Tax</span></th>
+          <td><span class="tax"></span></td>
+        </tr>
+        <tr>
+          <th><span>Total Amount</span></th>
+          <td><span class="Total"></span></td>
+        </tr>
+       </table>
+      
+      <button  class="back">X</button>
+      
     </div>
-
+  </div>
+  <button class="print">Print</button>
     <script src="invoice.js"></script>
   </body>
 </html>

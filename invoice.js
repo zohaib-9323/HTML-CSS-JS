@@ -5,7 +5,11 @@ let subtotal = document.querySelector(".Sub-total");
 let back = document.querySelector(".back");
 let print = document.querySelector(".print");
 let cart = JSON.parse(localStorage.getItem("cart"));
+let date = document.querySelector(".date");
 let salestax=0;
+const currentdate = new Date().toLocaleDateString();
+console.log(tbodyEl)
+date.innerHTML=`${currentdate}`;
 if (!cart || cart.length === 0) {
   alert("Your cart is empty!");
 } else {
@@ -26,13 +30,16 @@ if (!cart || cart.length === 0) {
           totalAmount += itemTotal;
           tbodyEl.innerHTML += `
             <tr>
-                <td style="text-align: left;">
+                <td style="text-align: left; padding-left:25px">
                     ${productInfo.name}
+                </td>
+                <td style ="text-align: center;">
+                    ${productInfo.price}
                 </td>
                 <td style ="text-align: center;">
                     ${item.quantity}
                 </td>
-                <td style="text-align: right;">
+                <td style="text-align: center;">
                     Rs.${itemTotal.toFixed(2)}
                 </td>
             </tr>`;

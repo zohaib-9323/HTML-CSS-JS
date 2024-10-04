@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Listing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body class="">
     <div class="container">
@@ -33,21 +31,23 @@
               d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
             />
           </svg>
-          <span>0</span>
+          <span class="count">0</span>
         </div>
       </header>
       <div class="productlist">
         <div class="items"></div>
       </div>
     </div>
-    <div  class="carttab">
+    <div class="carttab">
       <h1>Shopping cart <button class="close">X</button></h1>
       <div class="listcart">
         <div class="item"></div>
       </div>
-      <div style="padding-top: 15px; background-color: #edede9; color: #003049; "><span class="totalamount">SubTotal</span><span class="subTotal"></span>
+      <div style="padding-top: 15px; background-color: #edede9; color: #003049">
+        <span class="totalamount">SubTotal</span><span class="subTotal"></span>
         <span class="ST">Salestax(16%)</span><span class="Saletax"></span>
-        <span class="GT">Total</span><span class="Total"></span></div>
+        <span class="GT">Total</span><span class="Total"></span>
+      </div>
       <div class="btn">
         <button class="clear" disabled>Clear</button>
         <button class="Check" disabled>Generate</button>
@@ -63,7 +63,7 @@
         </div>
       </div>
     </div>
-    
+
     <script src="script.js"></script>
   </body>
 </html>

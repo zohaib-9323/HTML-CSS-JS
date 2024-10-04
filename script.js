@@ -14,6 +14,7 @@ let subtotal = document.querySelector(".subTotal");
 let total = document.querySelector(".Total");
 let saletax =document.querySelector(".Saletax");
 let clear = document.querySelector(".clear");
+let count = document.querySelector(".count");
 const modal = document.getElementById('confirmModal');
 const confirmBtn = document.getElementById('confirmBtn');
 const cancelBtn = document.getElementById('cancelBtn');
@@ -30,9 +31,18 @@ iconcart.addEventListener("click", () => {
 });
 
 
-productlisthtml.addEventListener("click", (event) => {
 
-  if (body.classList.contains("showcart")) {
+productlisthtml.addEventListener("click", (event) => {
+  const positionClick = event.target;
+  
+
+  if (positionClick.classList.contains("Addcart") || positionClick.classList.contains("quantity-selector")|| positionClick.classList.contains("plus")|| positionClick.classList.contains("minus") || positionClick.classList.contains("Quantity")) {
+    if (body.classList.contains("showcart")) {
+      body.classList.add("showcart");
+    }
+  } 
+
+  else if (body.classList.contains("showcart")) {
     body.classList.remove("showcart");
   }
 });
@@ -90,6 +100,8 @@ productlisthtml.addEventListener("click", (event) => {
   let positionClick = event.target;
   let productCard = positionClick.closest(".items");
   if (positionClick.classList.contains("Addcart")) {
+    iconcart.style.color="black";
+    count.style.display ="inline";
     let id_product = productCard.dataset.id;
     let quantityInput = productCard.querySelector(".Quantity");
     let currentQuantity = parseInt(quantityInput.innerHTML, 10);
@@ -187,6 +199,11 @@ const addcarttomemory = () => {
 };
 const updateCartCount = () => {
   let totalItems = cart.length; 
+  if(totalItems==0)
+  {
+    count.style.display="none";
+    iconcart.style.color="grey";
+  }
   iconcartspan.textContent = totalItems; 
 };
 const addcarttohtml = () => {
@@ -213,26 +230,21 @@ const addcarttohtml = () => {
       let info = listproducts[positionProduct];
 
       newItem.innerHTML = `
-            <div class="row1">
+            
               <div class="image">
                 <img src="${info.image}" alt="${info.name}">
               </div>
               <div class="name">
-                ${info.name}
+                <p>${info.name}</p>
+                <p style="font-size:13px;">Rs.${info.price}</p>
               </div>
-              <div class="peritem">
-                Rs.${info.price}
-              </div>
-
-            </div>
-            <div class="row2">
               <div class="quantity">
                 <span class="minus"><</span>
                 <span>${item.quantity}</span>
                 <span class="plus">></span>
               </div>
-              <div class="totalPrice">Total :&nbsp  Rs.${info.price * item.quantity}</div>
-            </div>
+              <div class="totalPrice"> Rs.${info.price * item.quantity}</div>
+            
             
             `;
 
@@ -256,7 +268,7 @@ listcarthtml.addEventListener("click", (event) => {
     positionClick.classList.contains("minus") ||
     positionClick.classList.contains("plus")
   ) {
-    let product_id = positionClick.parentElement.parentElement.parentElement.dataset.id;
+    let product_id = positionClick.parentElement.parentElement.dataset.id;
     let type = positionClick.classList.contains("plus") ? "plus" : "minus";
     changeQuantityCart(parseInt(product_id, 10), type);
   }
