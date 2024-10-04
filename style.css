@@ -33,9 +33,10 @@ header{
 .icon-cart span{
     position: absolute;
     display: flex;
-    width: 22.5px;
-    height: 22.5px;
-    background-color: red;
+    /* width: 22.5px;
+    height: 22.5px;*/
+    padding: 2px 7px 2px 7px;
+    background-color: red; 
     justify-content: center;
     align-items: center;
     color: white;
@@ -156,37 +157,44 @@ body.showcart .carttab {
  }
 .carttab {
     width: 400px;
-    background-color: #403d39;
-    color: white;
+    background-color: #fbf6ef;
+    color: #212529;
     position: fixed;
     inset: 0 0 0 auto;
     transform: translateX(100%); 
     display: grid;
-    grid-template-rows: 70px 1fr 90px 50px;
+    grid-template-rows: 70px 1fr 140px 50px;
     gap: 5px;
-    
     transition: transform 0.5s ease;
     
 }
 .carttab h1{
     
     padding: 15px;
-    color: #003049;
+    color: #000000;
     margin: 0;
-    font-weight: 350;
-    background-color: #edede9;
+    font-weight: 400;
+    background-color: #d0b8ac;
 }
 .carttab .totalamount{
-    margin-right: 170.5px;
+    margin-right: 210.5px;
     padding-left: 20px;
     
 }
+.carttab .Discount{
+    padding-left: 20px;
+    margin-right: 178.5px;
+}
+.carttab .Dv-charge{
+    padding-left: 20px;
+    margin-right: 157px;
+}
 .carttab .ST{
-    margin-right: 132px;
+    margin-right: 172px;
     padding-left: 20px;
 }
 .carttab .GT{
-    margin-right: 198px;
+    margin-right: 238px;
     padding-left: 20px;
 }
 .carttab .btn{
@@ -195,7 +203,8 @@ body.showcart .carttab {
     grid-template-columns: repeat(2, 1fr);
 }
 .carttab .btn button{
-    background-color: #a98467;
+    background-color: #d0b8ac;
+    color: rgb(0, 0, 0);
     border: none;
     font-family: "Fredoka", system-ui;
     font-weight: 500;
@@ -203,6 +212,7 @@ body.showcart .carttab {
 }
 .carttab .btn .clear{
     background-color: white;
+    color: #463f3a;
 }
 .carttab .close{
     position: absolute;
@@ -213,8 +223,6 @@ body.showcart .carttab {
     width: 90%;
     height: 50px;
     padding:4.5px 3px 2px 3px;
-    
-
 }
 .carttab .listcart .item{
     display: grid;
@@ -222,28 +230,8 @@ body.showcart .carttab {
     justify-content: center;
     text-align: center;
     align-items: center;
-    border-bottom: 1px solid #e3d5ca;
+    border-bottom: 1px solid #272524;
 }
-/* .carttab .listcart .item .row1{
-    display: grid;
-    width: 300px;
-    grid-template-columns: 70px 1fr 80px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    border-bottom: 1px solid #edede9;
-} */
-/* .carttab .listcart .item .row2{
-    display: grid;
-    width: 300px;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-bottom: 3px;
-    border-bottom: 1px solid #edede9;
-    
-} */
 .carttab .listcart .item .name{
     text-align: left;
     padding-left: 10px;
@@ -264,15 +252,15 @@ body.showcart .carttab {
 }
 .listcart .quantity span{
     display: inline-block;
-    width: 25px;
-    height: 25px;
+    /* width: 25px;
+    height: 25px; */
     background-color: white;
     color: black;
-    border-radius: 30%;
+    border-radius: 50%;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
-    padding-top: 5px;
+    padding: 2px 7.5px 2.5px 7.5px;
 }
 .listcart .quantity span:nth-child(2){
     background-color: transparent;

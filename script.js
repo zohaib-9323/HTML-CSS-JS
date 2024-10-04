@@ -15,6 +15,8 @@ let total = document.querySelector(".Total");
 let saletax =document.querySelector(".Saletax");
 let clear = document.querySelector(".clear");
 let count = document.querySelector(".count");
+let dvcharge = document.querySelector(".DVcharge");
+let discount = document.querySelector(".Disc");
 const modal = document.getElementById('confirmModal');
 const confirmBtn = document.getElementById('confirmBtn');
 const cancelBtn = document.getElementById('cancelBtn');
@@ -22,31 +24,63 @@ const cancelBtn = document.getElementById('cancelBtn');
 let salestax = 0;
 let listproducts = [];
 let cart = [];
-iconcart.addEventListener("click", () => {
-  if(cart.length>0)
-  {
-    body.classList.toggle("showcart");
-  }
-  
-});
 
 
 
-productlisthtml.addEventListener("click", (event) => {
+container.addEventListener("click", (event) => {
   const positionClick = event.target;
-  
 
-  if (positionClick.classList.contains("Addcart") || positionClick.classList.contains("quantity-selector")|| positionClick.classList.contains("plus")|| positionClick.classList.contains("minus") || positionClick.classList.contains("Quantity")) {
+  // if(positionClick.classList.contains("Addcart")|| positionClick.classList.contains("plus")|| positionClick.classList.contains("minus")||positionClick.classList.contains("Quantity")||positionClick.classList.contains("test")  ){
+  //   console.log('called')
+
+  // }else{
+  //   if(body.classList.contains("showcart")){
+  //     body.classList.remove("showcart");
+
+  //   }
+  // }
+
+  // }
+   if(positionClick.classList.contains("test")||positionClick.classList.contains("count")){
+    if(body.classList.contains("showcart")){
+      body.classList.add("showcart");
+    }
+      
+   }
+   else if (
+    positionClick.classList.contains("Addcart") || 
+    positionClick.classList.contains("quantity-selector") ||
+    positionClick.classList.contains("plus") ||
+    positionClick.classList.contains("minus") || 
+    positionClick.classList.contains("Quantity")
+  ) {
+   
     if (body.classList.contains("showcart")) {
       body.classList.add("showcart");
     }
-  } 
-
-  else if (body.classList.contains("showcart")) {
+  } else if (body.classList.contains("showcart")) {
     body.classList.remove("showcart");
   }
+  //  else {
+  //   // console.log('called')
+  //   // if(body.classList.contains("showcart")){
+  //   //   debugger
+      
+  //   //   body.classList.remove("showcart");
+
+  //   }
+    // Hide the cart if any other area is clicked and cart is visible
+    
+  // }
 });
 
+iconcart.addEventListener("click", () => {
+  if(cart.length>0)
+  {
+    body.classList.add("showcart");
+  }
+  
+});
 
 close.addEventListener("click", () => {
   body.classList.remove("showcart");
@@ -239,9 +273,9 @@ const addcarttohtml = () => {
                 <p style="font-size:13px;">Rs.${info.price}</p>
               </div>
               <div class="quantity">
-                <span class="minus"><</span>
-                <span>${item.quantity}</span>
-                <span class="plus">></span>
+                <span style="background-color:#d0b8ac;" class="minus"><</span>
+                <span style="color:#212529;">${item.quantity}</span>
+                <span style="background-color:#d0b8ac;" class="plus">></span>
               </div>
               <div class="totalPrice"> Rs.${info.price * item.quantity}</div>
             
@@ -251,15 +285,19 @@ const addcarttohtml = () => {
       listcarthtml.appendChild(newItem);
       subtotal.innerHTML = "Rs." + totalAmount;
       salestax=(totalAmount*16/100);
+      discount.innerHTML ="Rs." + (((totalAmount+salestax)*4)/100);
       saletax.innerHTML ="Rs." + salestax;
-      total.innerHTML ="Rs." +(totalAmount+salestax);
+      dvcharge.innerHTML = "Rs.400";
+      total.innerHTML ="Rs." +((totalAmount+salestax+400)-(((totalAmount+salestax)*4)/100));
 
     });
   }
   if (cart.length == 0) {
-    subtotal.innerHTML = "Rs.0";
-    saletax.innerHTML ="Rs.0";
-    total.innerHTML = "Rs.0";
+    subtotal.innerHTML = "";
+    saletax.innerHTML ="";
+    dvcharge.innerHTML=""
+    total.innerHTML = "";
+    discount.innerHTML="";
   }
 };
 listcarthtml.addEventListener("click", (event) => {

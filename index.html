@@ -14,8 +14,11 @@
     <div class="container">
       <header>
         <div class="title">Product List</div>
+        
+          
         <div class="icon-cart">
           <svg
+          class="test"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="35"
@@ -33,6 +36,7 @@
           </svg>
           <span class="count">0</span>
         </div>
+        
       </header>
       <div class="productlist">
         <div class="items"></div>
@@ -43,9 +47,11 @@
       <div class="listcart">
         <div class="item"></div>
       </div>
-      <div style="padding-top: 15px; background-color: #edede9; color: #003049">
+      <div style="padding-top: 15px; background-color: #d0b8ac; color: #000000">
         <span class="totalamount">SubTotal</span><span class="subTotal"></span>
         <span class="ST">Salestax(16%)</span><span class="Saletax"></span>
+        <span class="Discount">Discount(4%)</span><span class="Disc"></span><hr>
+        <span class="Dv-charge">Delivery charges</span><span class="DVcharge">Rs.400</span>
         <span class="GT">Total</span><span class="Total"></span>
       </div>
       <div class="btn">
@@ -58,7 +64,7 @@
         <h2>Confirm Action</h2>
         <p>Are you sure you want to clear all data?</p>
         <div class="modal-buttons">
-          <button id="confirmBtn">Yes, clear data</button>
+          <button id="confirmBtn" style="width: 90px;">Yes</button>
           <button id="cancelBtn">Cancel</button>
         </div>
       </div>

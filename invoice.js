@@ -4,9 +4,12 @@ let saletax = document.querySelector(".tax");
 let subtotal = document.querySelector(".Sub-total");
 let back = document.querySelector(".back");
 let print = document.querySelector(".print");
+let Discounts = document.querySelector(".Disc");
+let DV = document.querySelector(".Dv-charge");
 let cart = JSON.parse(localStorage.getItem("cart"));
 let date = document.querySelector(".date");
 let salestax=0;
+let disc=0;
 const currentdate = new Date().toLocaleDateString();
 console.log(tbodyEl)
 date.innerHTML=`${currentdate}`;
@@ -50,7 +53,9 @@ if (!cart || cart.length === 0) {
         salestax = (totalAmount * 16) / 100;
         subtotal.innerHTML = "Rs."+totalAmount;
         saletax.innerHTML = "Rs." +salestax;
-        total.innerHTML = "Rs."+ (totalAmount + salestax);
+        disc=(totalAmount+salestax)*0.04;
+        Discounts.innerHTML="Rs." + (disc.toFixed(2));
+        total.innerHTML = "Rs."+ ((totalAmount + salestax+400)-disc);
     })
     .catch((error) => {
       console.error("Error fetching the products:", error);
