@@ -1,7 +1,7 @@
 body{
     font-family: "Roboto", system-ui;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;   
 } 
 .container {
@@ -226,7 +226,7 @@ body.showcart .carttab {
 }
 .carttab .listcart .item{
     display: grid;
-    grid-template-columns: 70px 140px 84px 1fr ;
+    grid-template-columns: 65px 135px 88px 1fr ;
     justify-content: center;
     text-align: center;
     align-items: center;
