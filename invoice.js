@@ -43,6 +43,41 @@ if (!cart || cart.length === 0) {
   disc=(totalAmount+salestax)*0.04;
   Discounts.innerHTML="Rs." + (disc.toFixed(2));
   total.innerHTML = "Rs."+ ((totalAmount + salestax+400)-disc);
+  back.addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+  print.addEventListener("click", function () {
+    window.print();
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
   // fetch("products.json")
   //   .then((response) => {
   //     if (!response.ok) {
@@ -88,9 +123,4 @@ if (!cart || cart.length === 0) {
   //     console.error("Error fetching the products:", error);
   //   });
 }
-back.addEventListener("click", function () {
-    window.location.href = "index.html";
-  });
-  print.addEventListener("click", function () {
-    window.print();
-  });
+
